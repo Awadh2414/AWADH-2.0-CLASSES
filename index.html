@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <title>Awadh 2.0 Classes</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body { font-family: Arial, sans-serif; margin:0; background:#f4f6f8; }
+    header { background:#1e40af; color:white; padding:20px; text-align:center; }
+    nav { background:#111827; padding:10px; text-align:center; }
+    nav a { color:white; margin:0 15px; text-decoration:none; font-weight:bold; }
+    section { padding:30px; }
+    h2 { color:#1e40af; }
+    .card { background:white; padding:20px; border-radius:8px; box-shadow:0 4px 10px rgba(0,0,0,0.1); margin-bottom:20px; }
+    input, select, textarea, button {
+      width:100%; padding:10px; margin-top:10px; border-radius:5px; border:1px solid #ccc;
+    }
+    button { background:#1e40af; color:white; font-size:16px; cursor:pointer; }
+    button:hover { background:#1d4ed8; }
+    footer { background:#111827; color:white; text-align:center; padding:15px; }
+  </style>
+</head>
+<body>
+
+<header style="display:flex; align-items:center; justify-content:flex-start; gap:15px; padding-left:20px;">
+  
+  <div>
+    <h1 style="margin:0;">Awadh 2.0 Classes</h1>
+    <p style="margin:0;">Online & Offline Learning Platform</p>
+  </div>
+</header>
+
+<nav>
+  <a href="#home">Home</a>
+  <a href="#course">Courses</a>
+  <a href="#live">Live Class</a>
+  <a href="#admission">Online Admission</a>
+  <a href="#admin">Admin Login</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<section id="course">
+  <div class="card">
+    <h2>Our Courses</h2>
+    <p>Student apna course select karke login kare aur apni class attend kare.</p>
+    <ul>
+      <li>Class 9th – <a href="#login">Login & Attend Class</a></li>
+      <li>Class 10th – <a href="#login">Login & Attend Class</a></li>
+      <li>Class 12th – <a href="#login">Login & Attend Class</a></li>
+      <li>SSC – <a href="#login">Login & Attend Class</a></li>
+      <li>Bank – <a href="#login">Login & Attend Class</a></li>
+      <li>Railway – <a href="#login">Login & Attend Class</a></li>
+    </ul>
+  </div>
+</section>
+
+<section id="home">
+  <div class="card">
+    <h2>Welcome</h2>
+    <p>Yeh website aapke coaching institute ke liye banayi gayi hai jisme aap live online classes chala sakte ho aur online admission le sakte ho.</p>
+  </div>
+</section>
+
+<section id="live">
+  <div class="card">
+    <h2>Live Online Class (Zoom)</h2>
+    <p>Yahan aap Zoom ke through live online class join kar sakte ho.</p>
+    <p><b>Zoom Live Class Link:</b></p>
+    <a href="https://zoom.us/j/1234567890" target="_blank">
+      <button>Join Live Zoom Class</button>
+    </a>
+    <p style="margin-top:10px; color:gray;">(Note: Yahan apna real Zoom Meeting link daal sakte ho)</p>
+  </div>
+</section>
+
+<section id="admission">
+  <div class="card">
+    <h2>Online Admission Form</h2>
+    <form onsubmit="submitForm(event)">
+      <input type="text" id="name" placeholder="Student Name" required>
+      <input type="email" id="email" placeholder="Email" required>
+      <input type="tel" id="mobile" placeholder="Mobile Number" required>
+      <select id="course" required>
+        <option value="">Select Course</option>
+        <option>Class 9th</option>
+        <option>Class 10th</option>
+        <option>Class 12th</option>
+        <option>SSC</option>
+        <option>Bank</option>
+        <option>Railway</option>
+      </select>
+      <textarea id="message" placeholder="Message"></textarea>
+      <button type="submit">Submit Admission</button>
+    </form>
+    <p id="result"></p>
+
+    <hr style="margin:25px 0;">
+
+    <h3>Admission Fee Payment</h3>
+    <p><b>Amount:</b> ₹350 (India Rupees)</p>
+    <p>PhonePe / Google Pay / UPI se payment karein</p>
+
+    <a href="upi://pay?pa=9696603167@upi&pn=Awadh%202.0%20Classes&am=350&cu=INR" target="_blank">
+      <button>Pay ₹350 via UPI</button>
+    </a>
+    <p style="font-size:14px; color:gray; margin-top:10px;">Payment successful hone ke baad admin aapka admission confirm karega.</p>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="card">
+    <h2>Contact Us</h2>
+    <p><b>Phone:</b> 9696603167</p>
+    <p><b>Email:</b> awadh2classes@gmail.com</p>
+    <p><b>Address:</b> LIC Bhawan, 2nd Floor, Pahitipur, Akbarpur, Uttar Pradesh, India – 224186</p>
+    <p style="margin-top:10px; color:green;"><b>24×7 Support & Chat ki suvidha uplabdh hai</b></p>
+    <a href="https://wa.me/919696603167" target="_blank">
+      <button>Chat on WhatsApp (24×7)</button>
+    </a>
+  </div>
+</section>
+
+<section id="courseVideo" style="padding:30px;">
+  <div class="card">
+    <h2>Course Video Upload (Teacher / Admin)</h2>
+    <p>Yahan aap apne course ke lecture videos upload kar sakte ho (Demo).</p>
+    <input type="file" id="videoFile" accept="video/*">
+    <button onclick="uploadVideo()">Upload Video</button>
+    <p id="videoMsg"></p>
+
+    <h3 style="margin-top:20px;">Uploaded Videos</h3>
+    <video id="uploadedVideo" controls style="width:100%; display:none; margin-top:10px;"></video>
+  </div>
+</section>
+
+<section id="admin" style="padding:30px;">
+  <div class="card">
+    <h2>Admin Login Panel</h2>
+    <p>Sirf Admin ke liye (Awadh 2.0 Classes)</p>
+    <form onsubmit="adminLogin(event)">
+      <input type="tel" id="adminUser" placeholder="Admin Mobile Number" required>
+      <input type="password" id="adminPass" placeholder="Admin Password" required>
+      <button type="submit">Login as Admin</button>
+    </form>
+    <p id="adminResult"></p>
+
+    <div id="adminPanel" style="display:none; margin-top:20px;">
+      <h3>Admin Control Panel</h3>
+      <ul>
+        <li>✔ Live Class Zoom Link Change</li>
+        <li>✔ Course Videos Upload</li>
+        <li>✔ Admission Details Check</li>
+        <li>✔ Website Content Update</li>
+      </ul>
+      <p style="color:green;"><b>Admin login successful. Aap changes kar sakte ho.</b></p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Awadh 2.0 Classes. All Rights Reserved.</p>
+</footer>
+
+<script>
+  function submitForm(e) {
+    e.preventDefault();
+    document.getElementById('result').innerText = "Admission form successfully submit ho gaya! (Demo)";
+  }
+
+  function uploadVideo() {
+    const file = document.getElementById('videoFile').files[0];
+    if (!file) {
+      document.getElementById('videoMsg').innerText = 'Please select a video file';
+      return;
+    }
+    const videoURL = URL.createObjectURL(file);
+    const video = document.getElementById('uploadedVideo');
+    video.src = videoURL;
+    video.style.display = 'block';
+    document.getElementById('videoMsg').innerText = 'Video uploaded successfully (Demo Mode)';
+  }
+
+  function adminLogin(e) {
+    e.preventDefault();
+    const user = document.getElementById('adminUser').value;
+    const pass = document.getElementById('adminPass').value;
+
+    if (user === '9696603167' && pass === 'Tanveer@123456') {
+      document.getElementById('adminResult').innerText = 'Admin Login Successful';
+      document.getElementById('adminPanel').style.display = 'block';
+    } else {
+      document.getElementById('adminResult').innerText = 'Invalid Admin Credentials';
+    }
+  }
+</script>
+
+</body>
+</html>
